@@ -39,11 +39,21 @@ public class Student {
                 tuitionBalance=tuitionBalance+costOfCourse;
             }
             else {
-                System.out.println("Break...");
                 break;
             }
         }while (1 !=0);
             System.out.println("ENROLLED IN: "+curses);
             System.out.println("TUIRION BALANCE: "+tuitionBalance+"usd");
+    }
+    public void viewBalance(){
+        System.out.println("Your balance is "+tuitionBalance);
+    }
+    public void payTuition(){
+        System.out.println("Enter your payment: ");
+        Scanner scanner=new Scanner(System.in);
+        int payment=scanner.nextInt();
+        tuitionBalance=tuitionBalance-payment;
+        System.out.println("Thank you fot your payment of "+payment);
+        viewBalance();
     }
 }
